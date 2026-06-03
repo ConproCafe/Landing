@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRL — Conpro Café · Canal Mayorista</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--k:#0d0d0d;--w:#ffffff;--r:#c0392b;--g:#6b6b6b;--gl:#e8e4df;--b:#d0ccc6;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--w);color:var(--k);overflow-x:hidden;}
+.bc{font-family:'Barlow Condensed',sans-serif;}
+.ds{font-family:'DM Serif Display',serif;}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.a1{animation:fu .7s ease both}.a2{animation:fu .7s .1s ease both}.a3{animation:fu .7s .2s ease both}.a4{animation:fu .7s .3s ease both}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;border-bottom:2px solid var(--k);}
+.logo-svg{width:64px;margin:0 auto 8px;display:block;}
+.logo-crl{font-family:'Barlow Condensed',sans-serif;font-size:clamp(72px,12vw,108px);font-weight:900;line-height:.9;letter-spacing:-.02em;}
+.logo-sub{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;color:var(--k);margin-top:4px;}
+.div-line{display:flex;align-items:center;gap:14px;margin:32px 0;width:100%;max-width:440px;}
+.div-line::before,.div-line::after{content:'';flex:1;height:1px;background:var(--k);}
+.div-txt{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;}
+.hero-canal{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--g);margin-bottom:8px;}
+.hero-tag{font-family:'DM Serif Display',serif;font-size:clamp(22px,4vw,36px);font-style:italic;color:var(--k);line-height:1.25;margin-bottom:36px;}
+.btn-k{display:inline-flex;align-items:center;gap:9px;background:var(--k);color:var(--w);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border:2px solid var(--k);transition:.18s;}
+.btn-k:hover{background:var(--w);color:var(--k);}
+.btn-k svg{width:17px;height:17px;flex-shrink:0;}
+.hero-meta{margin-top:16px;font-size:12px;color:var(--g);letter-spacing:.04em;}
+.hero-meta a{color:var(--g);}
+
+/* SECTIONS */
+.s{padding:80px 24px;}.si{max-width:1040px;margin:0 auto;}.sb{border-bottom:1px solid var(--b);}
+.lbl{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--g);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.lbl::after{content:'';width:28px;height:1px;background:var(--g);}
+.stit{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,7vw,76px);font-weight:700;line-height:.92;text-transform:uppercase;margin-bottom:20px;}
+.stit em{font-family:'DM Serif Display',serif;font-size:.88em;text-transform:none;font-weight:400;font-style:italic;}
+.sbody{font-size:15px;color:var(--g);max-width:460px;line-height:1.75;font-weight:300;}
+
+/* PROPS */
+.pg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--b);margin-top:48px;}
+.pi{padding:36px 28px;border-right:1px solid var(--b);}
+.pi:last-child{border-right:none;}
+.pn{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;color:var(--gl);line-height:1;margin-bottom:12px;}
+.pt{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;}
+.px{font-size:14px;color:var(--g);line-height:1.7;font-weight:300;}
+
+/* CATALOGO */
+.cat-s{background:var(--k);}
+.cat-s .lbl{color:#777;}.cat-s .lbl::after{background:#777;}
+.cat-s .stit{color:var(--w);}.cat-s .sbody{color:#777;}
+.cg{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid #222;margin-top:48px;}
+.vc{padding:32px 28px;border-right:1px solid #222;border-bottom:1px solid #222;}
+.vc:nth-child(even){border-right:none;}
+.vc:nth-last-child(-n+2){border-bottom:none;}
+.vtop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px;}
+.vreg{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#555;}
+.vnew{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--r);border:1px solid var(--r);padding:2px 6px;}
+.vnm{font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:900;color:var(--w);text-transform:uppercase;line-height:.9;margin-bottom:4px;}
+.vvar{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:300;color:#666;font-style:italic;margin-bottom:16px;}
+.vsp{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid #222;padding-top:16px;margin-bottom:14px;}
+.sct{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--w);margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em;}
+.ri{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#444;}
+.ri.on{color:#bbb;}
+.rc{width:12px;height:12px;border-radius:50%;border:1px solid #444;flex-shrink:0;}
+.rc.f{background:var(--r);border-color:var(--r);}
+.vperf{font-family:'DM Serif Display',serif;font-size:13px;font-style:italic;color:#666;line-height:1.5;margin-bottom:16px;}
+.vpr{display:flex;align-items:baseline;gap:16px;padding-top:14px;border-top:1px solid #222;}
+.vpm{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:var(--w);}
+.vpl{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#555;display:block;margin-bottom:1px;}
+.vp2{font-family:'Barlow Condensed',sans-serif;font-size:17px;color:#666;}
+.vbg{margin-left:auto;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;color:#2d7a1a;border:1px solid #2d7a1a;padding:2px 7px;text-transform:uppercase;align-self:center;}
+
+/* CICLO */
+.ch{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:48px;}
+.cs{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--k);}
+.cst{padding:32px 22px;border-right:1px solid var(--b);}
+.cst:last-child{border-right:none;}
+.cst.ak{background:var(--k);}
+.cst.ak .ca{color:var(--w);}.cst.ak .cd{color:#666;}.cst.ak .cn{color:#2a2a2a;}
+.cdia{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--r);margin-bottom:16px;}
+.cn{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;color:var(--gl);line-height:1;margin-bottom:6px;}
+.ca{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;}
+.cd{font-size:13px;color:var(--g);line-height:1.6;font-weight:300;}
+
+/* CONDICIONES */
+.conds{background:var(--gl);}
+.cog{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--b);margin-top:48px;background:var(--b);gap:1px;}
+.coi{background:var(--gl);padding:32px 24px;}
+.coic{font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:900;line-height:1;margin-bottom:12px;}
+.coit{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:7px;}
+.coix{font-size:13px;color:var(--g);line-height:1.65;font-weight:300;}
+
+/* CTA */
+.ctaf{background:var(--k);text-align:center;padding:112px 24px;}
+.ctaf .stit{color:var(--w);}
+.ctaf .sbody{color:#777;margin:0 auto 44px;}
+.wabtn{display:inline-flex;align-items:center;gap:11px;background:#25D366;color:var(--w);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:17px 40px;border:2px solid #25D366;transition:.18s;}
+.wabtn:hover{background:transparent;color:#25D366;}
+.wabtn svg{width:21px;height:21px;}
+.catlink{display:inline-flex;align-items:center;gap:7px;color:#555;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;margin-top:18px;border-bottom:1px solid #333;padding-bottom:2px;transition:.18s;}
+.catlink:hover{color:var(--w);border-color:var(--w);}
+.ctahor{margin-top:28px;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#444;}
+
+/* FOOTER */
+footer{background:var(--w);border-top:2px solid var(--k);padding:28px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.fl{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;}
+.fr{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);}
+
+@media(max-width:768px){
+  .pg,.cog{grid-template-columns:1fr;}
+  .pi{border-right:none;border-bottom:1px solid var(--b);}
+  .pi:last-child{border-bottom:none;}
+  .cg{grid-template-columns:1fr;}
+  .vc:nth-child(even){border-right:none;}
+  .vc{border-right:none!important;}
+  .vc:last-child{border-bottom:none;}
+  .ch{grid-template-columns:1fr;gap:20px;}
+  .cs{grid-template-columns:1fr 1fr;}
+  .cst{border-bottom:1px solid var(--b);}
+  footer{flex-direction:column;text-align:center;}
+}
+@media(max-width:480px){.cs{grid-template-columns:1fr;}.cog{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<img src="data:image/png;base64,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190zTrcKWqbielc5ER3TCd55Oxe117smsrprLUSpBWVzmqlM1ERGY9nRTegAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z" class="a1" alt="CRL Coffee Roasting Labs" style="width:240px;max-width:58vw;display:block;margin:0 auto 0;"/>
+<div class="div-line a2"><span class="div-txt">Café de Especialidad</span></div>
+<div class="a3">
+  <div class="hero-canal">Conpro Café · Canal Mayorista · Santiago</div>
+  <div class="hero-tag">Recién tostado, directo desde la tostadora.<br>Sin intermediarios.</div>
+</div>
+<a href="https://chat.whatsapp.com/GNW5SQc7mi45ITkuJXcBbY?s=cl&p=i&mlu=2" class="btn-k a4" target="_blank">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.523 5.851L.057 23.18c-.085.32.22.614.536.514l5.546-1.459A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.815 9.815 0 01-5.007-1.373l-.36-.214-3.714.977.993-3.628-.234-.373A9.82 9.82 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+  Pedir por WhatsApp
+</a>
+<div class="hero-meta a4">+56 9 4912 9182 &nbsp;·&nbsp; <a href="https://wa.me/c/56949129182" target="_blank">Ver catálogo WA</a></div>
+</section>
+
+<!-- PROPUESTA -->
+<section class="s sb">
+<div class="si">
+  <div class="lbl">Por qué CRL</div>
+  <h2 class="stit">Café de origen<br><em>a precio mayorista</em></h2>
+  <p class="sbody">Trabajamos directamente con CRL Coffee Roasting Labs. Sin stock viejo, sin intermediarios.</p>
+  <div class="pg">
+    <div class="pi"><div class="pn">01</div><div class="pt">Recién tostado</div><div class="px">Cada lote sale de la tostadora semanalmente. Café en su punto óptimo de reposo y extracción.</div></div>
+    <div class="pi"><div class="pn">02</div><div class="pt">Precio mayorista</div><div class="px">Canal mayorista desde 3 kg. Ahorra entre 23% y 28% respecto al precio retail normal.</div></div>
+    <div class="pi"><div class="pn">03</div><div class="pt">Retiro directo</div><div class="px">Sin delivery ni costos extra. Retiras cada viernes en Santiago, rápido y sin filas.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- CATÁLOGO -->
+<section class="s cat-s" id="catalogo">
+<div class="si">
+  <div class="lbl">Variedades disponibles</div>
+  <h2 class="stit">Orígenes<br><em>en stock</em></h2>
+  <p class="sbody">Al hacer tu pedido indica tu molienda: grano, espresso, italiana, francesa o filtrado. Combina variedades para llegar al mínimo de 3 kg.</p>
+  <div class="cg">
+
+    <!-- ROMA -->
+    <div class="vc">
+      <div class="vtop"><span class="vreg">Blend Italia</span></div>
+      <div class="vnm">Roma</div>
+      <div class="vvar">Catuai Amarillo 80% · Robusta 20%</div>
+      <div class="vsp">
+        <div><div class="sct">Proceso</div><div class="ri"><span class="rc"></span>Natural</div><div class="ri on"><span class="rc f"></span>Lavado</div><div class="ri"><span class="rc"></span>Honey</div></div>
+        <div><div class="sct">Tueste</div><div class="ri"><span class="rc"></span>Liviano</div><div class="ri"><span class="rc"></span>Medio</div><div class="ri on"><span class="rc f"></span>Medio+</div><div class="ri"><span class="rc"></span>Oscuro</div></div>
+        
+      </div>
+      <div class="vperf">Panela, chocolate, caramelo. Cuerpo intenso. Ideal espresso o latte.</div>
+      <div class="vpr"><div><span class="vpl">Mayorista/kg</span><span class="vpm">$25.300</span></div><div><span class="vpl">250 gr</span><span class="vp2">$9.300</span></div><span class="vbg">−25%</span></div>
+    </div>
+
+    <!-- BRASIL -->
+    <div class="vc">
+      <div class="vtop"><span class="vreg">Cerrado Mineiro</span></div>
+      <div class="vnm">Brasil</div>
+      <div class="vvar">100% Arábica Catuai Amarillo</div>
+      <div class="vsp">
+        <div><div class="sct">Proceso</div><div class="ri on"><span class="rc f"></span>Natural</div><div class="ri"><span class="rc"></span>Lavado</div><div class="ri"><span class="rc"></span>Honey</div></div>
+        <div><div class="sct">Tueste</div><div class="ri"><span class="rc"></span>Liviano</div><div class="ri on"><span class="rc f"></span>Medio</div><div class="ri"><span class="rc"></span>Medio+</div><div class="ri"><span class="rc"></span>Oscuro</div></div>
+        
+      </div>
+      <div class="vperf">Chocolate, miel, caramelo. Cuerpo cremoso y dulzor natural.</div>
+      <div class="vpr"><div><span class="vpl">Mayorista/kg</span><span class="vpm">$26.300</span></div><div><span class="vpl">250 gr</span><span class="vp2">$10.300</span></div><span class="vbg">−27%</span></div>
+    </div>
+
+    <!-- COLOMBIA -->
+    <div class="vc">
+      <div class="vtop"><span class="vreg">Huila · Nariño</span></div>
+      <div class="vnm">Colombia</div>
+      <div class="vvar">Castillo, Caturra — 100% Arábica</div>
+      <div class="vsp">
+        <div><div class="sct">Proceso</div><div class="ri"><span class="rc"></span>Natural</div><div class="ri on"><span class="rc f"></span>Lavado</div><div class="ri"><span class="rc"></span>Honey</div></div>
+        <div><div class="sct">Tueste</div><div class="ri"><span class="rc"></span>Liviano</div><div class="ri on"><span class="rc f"></span>Medio</div><div class="ri"><span class="rc"></span>Medio+</div><div class="ri"><span class="rc"></span>Oscuro</div></div>
+        
+      </div>
+      <div class="vperf">Nueces, chocolate amargo, frutos rojos. Acidez media-baja equilibrada.</div>
+      <div class="vpr"><div><span class="vpl">Mayorista/kg</span><span class="vpm">$26.300</span></div><div><span class="vpl">250 gr</span><span class="vp2">$10.300</span></div><span class="vbg">−27%</span></div>
+    </div>
+
+    <!-- PERU -->
+    <div class="vc">
+      <div class="vtop"><span class="vreg">Cajamarca</span></div>
+      <div class="vnm">Perú</div>
+      <div class="vvar">100% Arábica Catimor</div>
+      <div class="vsp">
+        <div><div class="sct">Proceso</div><div class="ri"><span class="rc"></span>Natural</div><div class="ri on"><span class="rc f"></span>Lavado</div><div class="ri"><span class="rc"></span>Honey</div></div>
+        <div><div class="sct">Tueste</div><div class="ri"><span class="rc"></span>Liviano</div><div class="ri on"><span class="rc f"></span>Medio</div><div class="ri"><span class="rc"></span>Medio+</div><div class="ri"><span class="rc"></span>Oscuro</div></div>
+        
+      </div>
+      <div class="vperf">Chocolate amargo, avellanas, cuerpo cremoso y persistente.</div>
+      <div class="vpr"><div><span class="vpl">Mayorista/kg</span><span class="vpm">$26.700</span></div><div><span class="vpl">250 gr</span><span class="vp2">$10.600</span></div><span class="vbg">−28%</span></div>
+    </div>
+
+    <!-- BOLIVIA -->
+    <div class="vc">
+      <div class="vtop"><span class="vreg">Caranavi</span><span class="vnew">Nuevo</span></div>
+      <div class="vnm">Bolivia</div>
+      <div class="vvar">Catuai Rojo, Typica, Caturra</div>
+      <div class="vsp">
+        <div><div class="sct">Proceso</div><div class="ri"><span class="rc"></span>Natural</div><div class="ri on"><span class="rc f"></span>Lavado</div><div class="ri"><span class="rc"></span>Honey</div></div>
+        <div><div class="sct">Tueste</div><div class="ri"><span class="rc"></span>Liviano</div><div class="ri on"><span class="rc f"></span>Medio</div><div class="ri"><span class="rc"></span>Medio+</div><div class="ri"><span class="rc"></span>Oscuro</div></div>
+        
+      </div>
+      <div class="vperf">Naranja dulce, avellana y caramelo. Perfil limpio y elegante de altura.</div>
+      <div class="vpr"><div><span class="vpl">Mayorista/kg</span><span class="vpm">$26.700</span></div><div><span class="vpl">250 gr</span><span class="vp2">$10.600</span></div><span class="vbg">−28%</span></div>
+    </div>
+
+    <!-- PINK BOURBON -->
+    <div class="vc">
+      <div class="vtop"><span class="vreg">Huila, Colombia</span><span class="vnew">Nuevo</span></div>
+      <div class="vnm">Pink Bourbon</div>
+      <div class="vvar">100% Arábica Bourbon Rosado</div>
+      <div class="vsp">
+        <div><div class="sct">Proceso</div><div class="ri"><span class="rc"></span>Natural</div><div class="ri on"><span class="rc f"></span>Lavado</div><div class="ri"><span class="rc"></span>Honey</div></div>
+        <div><div class="sct">Tueste</div><div class="ri"><span class="rc"></span>Liviano</div><div class="ri on"><span class="rc f"></span>Medio</div><div class="ri"><span class="rc"></span>Medio+</div><div class="ri"><span class="rc"></span>Oscuro</div></div>
+        
+      </div>
+      <div class="vperf">Caramelo, frutos amarillos, pomelo, durazno. Acidez brillante y floral.</div>
+      <div class="vpr"><div><span class="vpl">Mayorista/kg</span><span class="vpm">$32.000</span></div><div><span class="vpl">250 gr</span><span class="vp2">$11.500</span></div><span class="vbg">−24%</span></div>
+    </div>
+
+    <!-- ETIOPIA -->
+    <div class="vc">
+      <div class="vtop"><span class="vreg">Yirgacheffe</span></div>
+      <div class="vnm">Etiopía</div>
+      <div class="vvar">100% Arábica Heirloom Wild</div>
+      <div class="vsp">
+        <div><div class="sct">Proceso</div><div class="ri on"><span class="rc f"></span>Natural</div><div class="ri"><span class="rc"></span>Lavado</div><div class="ri"><span class="rc"></span>Honey</div></div>
+        <div><div class="sct">Tueste</div><div class="ri"><span class="rc"></span>Liviano</div><div class="ri on"><span class="rc f"></span>Medio</div><div class="ri"><span class="rc"></span>Medio+</div><div class="ri"><span class="rc"></span>Oscuro</div></div>
+        
+      </div>
+      <div class="vperf">Pomelo, melocotón, cacao, nuez moscada. Complejidad aromática única.</div>
+      <div class="vpr"><div><span class="vpl">Mayorista/kg</span><span class="vpm">$32.700</span></div><div><span class="vpl">250 gr</span><span class="vp2">$11.600</span></div><span class="vbg">−23%</span></div>
+    </div>
+
+    <!-- DECAF -->
+    <div class="vc">
+      <div class="vtop"><span class="vreg">Colombia · Sin cafeína</span></div>
+      <div class="vnm">Decaf</div>
+      <div class="vvar">100% Arábica Caturra</div>
+      <div class="vsp">
+        <div><div class="sct">Proceso</div><div class="ri"><span class="rc"></span>Natural</div><div class="ri on"><span class="rc f"></span>Lavado</div><div class="ri"><span class="rc"></span>Honey</div></div>
+        <div><div class="sct">Tueste</div><div class="ri"><span class="rc"></span>Liviano</div><div class="ri on"><span class="rc f"></span>Medio</div><div class="ri"><span class="rc"></span>Medio+</div><div class="ri"><span class="rc"></span>Oscuro</div></div>
+        
+      </div>
+      <div class="vperf">Descafeinado. Chocolate suave y cuerpo equilibrado sin sacrificar sabor.</div>
+      <div class="vpr"><div><span class="vpl">Mayorista/kg</span><span class="vpm">$32.000</span></div><div><span class="vpl">250 gr</span><span class="vp2">$11.500</span></div><span class="vbg">−24%</span></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CICLO -->
+<section class="s sb" id="como-pedir">
+<div class="si">
+  <div class="ch">
+    <div><div class="lbl">Cómo funciona</div><h2 class="stit">El ciclo de<br><em>pedidos</em></h2></div>
+    <p class="sbody">Cada semana se abre una ventana de pedidos. Simple, predecible, sin sorpresas. Escríbenos por WhatsApp.</p>
+  </div>
+  <div class="cs">
+    <div class="cst ak"><div class="cdia">Lun — Mié</div><div class="cn">01</div><div class="ca">Pedidos abiertos</div><div class="cd">Escríbenos hasta el miércoles a las 20h para reservar tu café.</div></div>
+    <div class="cst"><div class="cdia">Jueves</div><div class="cn">02</div><div class="ca">Confirmación</div><div class="cd">Te enviamos el resumen y los datos de transferencia bancaria.</div></div>
+    <div class="cst"><div class="cdia">Jue — Vie</div><div class="cn">03</div><div class="ca">Pago</div><div class="cd">Transferencia previa al retiro. Sin pago no hay reserva asegurada.</div></div>
+    <div class="cst"><div class="cdia">Viernes</div><div class="cn">04</div><div class="ca">Retiro</div><div class="cd">Retiras en punto acordado en Santiago. Rápido y sin filas.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- CONDICIONES -->
+<section class="s sb conds">
+<div class="si">
+  <div class="lbl">Condiciones de compra</div>
+  <h2 class="stit">Lo que necesitas<br><em>saber</em></h2>
+  <div class="cog">
+    <div class="coi"><div class="coic">3 kg</div><div class="coit">Pedido mínimo</div><div class="coix">El mínimo es 3 kg por entrega. Los pedidos se <strong>acumulan entre lunes y miércoles</strong>: varios compradores pueden sumar sus pedidos y, al reunir 3 kg en total, todos reciben su café el viernes.</div></div>
+    <div class="coi"><div class="coic">½ kg</div><div class="coit">Presentación doble</div><div class="coix">2×500 gr disponible con cargo de $700/kg adicional por empaque.</div></div>
+    <div class="coi"><div class="coic">☕</div><div class="coit">Todas las moliendas</div><div class="coix">Grano, espresso, italiana, francesa o filtrado. Sin costo extra.</div></div>
+    <div class="coi"><div class="coic">📍</div><div class="coit">Solo retiro</div><div class="coix">Retiro cada viernes en Santiago. Sin delivery por ahora.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="ctaf">
+<div class="si" style="display:flex;flex-direction:column;align-items:center;">
+  <div class="lbl" style="justify-content:center;color:#555;">Hacer un pedido</div>
+  <h2 class="stit" style="text-align:center;">¿Listo para<br><em style="color:#aaa;">tu primer pedido?</em></h2>
+  <p class="sbody" style="text-align:center;">Escríbenos por WhatsApp, elige tus variedades y reserva para el próximo viernes.</p>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:0;margin-top:44px;">
+    <a href="https://chat.whatsapp.com/GNW5SQc7mi45ITkuJXcBbY?s=cl&p=i&mlu=2" class="wabtn" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.523 5.851L.057 23.18c-.085.32.22.614.536.514l5.546-1.459A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.815 9.815 0 01-5.007-1.373l-.36-.214-3.714.977.993-3.628-.234-.373A9.82 9.82 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      Escribir al +56 9 4912 9182
+    </a>
+    <a href="https://wa.me/c/56949129182" class="catlink" target="_blank">Ver catálogo en WhatsApp Business →</a>
+  </div>
+  <div class="ctahor">Pedidos: Lunes a Miércoles &nbsp;·&nbsp; Cierre: Miércoles 20h &nbsp;·&nbsp; Retiro: Viernes</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">CRL &nbsp;·&nbsp; Conpro Café</div>
+  <div class="fr">Canal Mayorista · Santiago · +56 9 4912 9182</div>
+</footer>
+
+</body>
+</html>
